@@ -8,23 +8,23 @@ let viewer: Viewer | null = null;
  * 给图片添加预览功能
  */
 const setViewer = (el: string = '.vp-doc', option?: Viewer.Options) => {
-    // 默认配置
-    const defaultBaseOption: Viewer.Options = {
-        navbar: false,
-        title: false,
-        toolbar: {
-            zoomIn: 4,
-            zoomOut: 4,
-            prev: 4,
-            next: 4,
-            reset: 4,
-            oneToOne: 4
-        }
-    }
-    viewer = new Viewer(<HTMLElement>document.querySelector(el), {
-        ...defaultBaseOption,
-        ...option
-    })
+	// 默认配置
+	const defaultBaseOption: Viewer.Options = {
+		navbar: false,
+		title: false,
+		toolbar: {
+			zoomIn: 4,
+			zoomOut: 4,
+			prev: 4,
+			next: 4,
+			reset: 4,
+			oneToOne: 4
+		}
+	}
+	viewer = new Viewer(<HTMLElement>document.querySelector(el), {
+		...defaultBaseOption,
+		...option
+	})
 };
 
 /**
@@ -37,13 +37,13 @@ const setViewer = (el: string = '.vp-doc', option?: Viewer.Options) => {
  * <br/>viewerjs 设置选项
  */
 const imageViewer = (route: Route, el?: string, option?: Viewer.Options) => {
-    onMounted(() => {
-        setViewer(el, option);
-    })
-    watch(() => route.path, () => nextTick(() => {
-        viewer?.destroy();
-        setViewer(el, option);
-    }));
+	onMounted(() => {
+		setViewer(el, option);
+	})
+	watch(() => route.path, () => nextTick(() => {
+		viewer?.destroy();
+		setViewer(el, option);
+	}));
 }
 
 export default imageViewer;

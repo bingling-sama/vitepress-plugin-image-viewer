@@ -29,7 +29,7 @@ In `.vitepress/theme/index`
 import DefaultTheme from 'vitepress/theme';
 import 'viewerjs/dist/viewer.min.css';
 import imageViewer from 'vitepress-plugin-image-viewer';
-import vImageViewer from 'vitepress-plugin-image-viewer/lib/vImageViewer.vue';
+import vImageViewer from 'vitepress-plugin-image-viewer';
 import { useRoute } from 'vitepress';
 
 export default {
